@@ -1,0 +1,47 @@
+/**
+ * Theme Name: Tabuleiros do Brasil
+ * Description: Tema do projeto Tabuleiros do Brasil, filho do tema Blocksy
+ * Author: Mateus Wetah
+ * Template: blocksy
+ * Text Domain: tabuleirosbr
+ * Version: 0.3.0
+ */
+
+#user-registration {
+	box-shadow: none !important;
+}
+.ur-frontend-form {
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid legend,
+.ur-frontend-form .ur-form-row .ur-form-grid label {
+	font-size: 1rem;
+}
+.metadata-type-core_description,
+.metadata-type-textarea {
+	column-span: all;
+	width: 100%;
+	display: block !important;
+}
+.metadata-slug-designer-s + .metadata-slug-designer-s-2 .tainacan-metadata-label {
+	display: none;
+	visibility: hidden;
+}
+.metadata-slug-designer-s + .metadata-slug-designer-s-2 .tainacan-metadata-value {
+	margin-left: 2.5rem;
+	padding-top: 0.5rem;
+	border-top: 1px solid var(--tainacan-block-gray2);
+	width: auto;
+	display: inline-block;
+	padding-left: 0;
+}
+.metadata-slug-designer-s + .metadata-slug-designer-s-2 .tainacan-metadata-value .multivalue-separator {
+	font-size: 0;
+	width: 100%;
+	display: block;
+	height: 1px;
+	background-color: var(--tainacan-block-gray2);
+	margin: 0.45rem auto 0.45rem 0;
+}
