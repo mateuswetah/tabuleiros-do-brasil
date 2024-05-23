@@ -4,7 +4,7 @@
  * Author: Mateus Wetah
  * Template: blocksy
  * Text Domain: tabuleirosbr
- * Version: 0.3.0
+ * Version: 0.3.4
  */
 
 #user-registration {
@@ -19,6 +19,26 @@
 .ur-frontend-form .ur-form-row .ur-form-grid label {
 	font-size: 1rem;
 }
+.tainacan-records-container,
+.tainacan-masonry-container {
+	--theme-box-shadow: 0 1px 8px -5px #111;
+	--border: 1px solid #ccc;
+	--theme-border-radius: 6px;
+}
+.tainacan-records-container > li,
+.tainacan-masonry-container > li {
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+.tainacan-records-container > li:nth-child(n + 1):hover,
+.tainacan-masonry-container > li:nth-child(n + 1):hover {
+	transform: rotate3d(0.5,1.5,0.5, 2deg)  translateY(-12px);
+	--theme-box-shadow: 2px 14px 30px -21px #555;
+}
+.tainacan-records-container > li:nth-child(n + 2):hover,
+.tainacan-masonry-container > li:nth-child(n + 2):hover {
+	transform: rotate3d(1.5,0.5,0.5, -2deg)  translateY(-12px);
+	--theme-box-shadow: -2px 14px 28px -19px #555;
+}
 .metadata-type-core_description,
 .metadata-type-textarea {
 	column-span: all;
@@ -26,7 +46,7 @@
 	display: block !important;
 }
 .metadata-slug-designer-s + .metadata-slug-designer-s-2 .tainacan-metadata-label {
-	display: none;
+	display: none !important;
 	visibility: hidden;
 }
 .metadata-slug-designer-s + .metadata-slug-designer-s-2 .tainacan-metadata-value {
@@ -35,7 +55,7 @@
 	border-top: 1px solid var(--tainacan-block-gray2);
 	width: auto;
 	display: inline-block;
-	padding-left: 0;
+	padding-left: 0 !important;
 }
 .metadata-slug-designer-s + .metadata-slug-designer-s-2 .tainacan-metadata-value .multivalue-separator {
 	font-size: 0;
