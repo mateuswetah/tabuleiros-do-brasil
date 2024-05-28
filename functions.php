@@ -277,6 +277,7 @@ function tabuleirosbr_add_welcome_message() {
 					}
 					?>
 				</p>
+				<p>Se você quiser baixar o Termo de Consentimento Livre e Esclarecido, está <a href="https://drive.google.com/file/d/1Bnn31pMxrBpn0y6C8hFH8mSok7mk9dZy/view" target="_blank">aqui</a>.</p>
 			</div>
 		<?php elseif ( $parent_base === 'edit' && tabuleirosbr_get_designers_collection_post_type() === $post_type ) : ?>
 			<div class="tabuleirosbr-admin-welcome-panel">
@@ -286,6 +287,7 @@ function tabuleirosbr_add_welcome_message() {
 				<p>
 					Preencha seus dados como designer para poder vincular jogos ao seu perfil.
 				</p>
+				<p>Se você quiser baixar o Termo de Consentimento Livre e Esclarecido, está <a href="https://drive.google.com/file/d/1Bnn31pMxrBpn0y6C8hFH8mSok7mk9dZy/view" target="_blank">aqui</a>.</p>
 			</div>
 		<?php endif;
 	}
