@@ -348,10 +348,10 @@ function tabuleirosbr_add_collections_to_toolbar($admin_bar) {
 			));
 			$admin_bar->add_menu( array(
 				'id'    => 'designer-' . get_the_ID() . '-profile',
-				'title' => __('Meus dados de designer', 'tabuleirosbr'),
+				'title' => __('Dados de designer', 'tabuleirosbr') . ' (' . get_the_title() . ')',
 				'href'  => admin_url(  '?page=tainacan_admin#/collections/' . tabuleirosbr_get_designers_collection_id() . '/items/' . get_the_ID() . '/edit' ),
 				'meta'  => array(
-					'title' => __('Meus dados de designer', 'tabuleirosbr'),
+					'title' => __('Dados de designer', 'tabuleirosbr') . ' (' . get_the_title() . ')',
 				),
 				'parent' => 'user-actions'
 			));
@@ -378,7 +378,9 @@ function tabuleirosbr_add_collections_to_toolbar($admin_bar) {
 			'parent' => 'user-actions'
 		));
 	}
-	
+		
+	wp_reset_postdata();
+	wp_reset_query();
 }
 add_action('admin_bar_menu', 'tabuleirosbr_add_collections_to_toolbar', 100);
 
