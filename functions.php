@@ -109,13 +109,16 @@ add_filter('login_redirect', 'tabuleirosbr_jogos_login_redirect', 10, 3);
  */
 function tabuleirosbr_admin_enqueue_styles() {
 	wp_enqueue_style( 'tabuleirosbr-admin-style', get_stylesheet_directory_uri() . '/admin.css' );
-	wp_enqueue_script( 'tabuleirosbr-admin-script', get_stylesheet_directory_uri() . '/admin.js', array('wp-hooks'), wp_get_theme()->get('Version') );
-	
-	wp_localize_script( 'tabuleirosbr-admin-script', 'tabuleirosbr_theme', array(
-        'jogos_collection_id' => tabuleirosbr_get_jogos_collection_id(),
-        'designers_collection_id' => tabuleirosbr_get_designers_collection_id(),
-		'edit_admin_url' => admin_url( 'edit.php'),
-    ) );
+
+	if ( tabuleirosbr_user_is_designer() ) {
+		wp_enqueue_script( 'tabuleirosbr-admin-script', get_stylesheet_directory_uri() . '/admin.js', array('wp-hooks'), wp_get_theme()->get('Version') );
+		
+		wp_localize_script( 'tabuleirosbr-admin-script', 'tabuleirosbr_theme', array(
+			'jogos_collection_id' => tabuleirosbr_get_jogos_collection_id(),
+			'designers_collection_id' => tabuleirosbr_get_designers_collection_id(),
+			'edit_admin_url' => admin_url( 'edit.php'),
+		) );
+	}
 }
 add_action( 'admin_enqueue_scripts', 'tabuleirosbr_admin_enqueue_styles' );
 
@@ -295,7 +298,7 @@ function tabuleirosbr_add_welcome_message() {
 add_action( 'admin_notices', 'tabuleirosbr_add_welcome_message', 10 );
 
 /*
- * Adiciona parâmetros para o Admin Tainacan para esconder elementos que não são necessários
+ * Adiciona parâmetros para o Admin Tainacan para esconder elementos que não são necessários ao
  */
 function tabuleirosbr_set_tainacan_admin_options($options) {
 	
