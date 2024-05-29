@@ -3,7 +3,7 @@ if (wp && wp.hooks) {
 
         if ( itemObject.collectionId == tabuleirosbr_theme.jogos_collection_id || itemObject.collectionId == tabuleirosbr_theme.designers_collection_id) {
             return tabuleirosbr_theme.edit_admin_url + '?post_type=tnc_col_' + tabuleirosbr_theme.jogos_collection_id + '_item';
-        } else if ( itemObject.collectionId( )) {
+        } else if ( itemObject.collectionId ) {
             return tabuleirosbr_theme.edit_admin_url + '?post_type=tnc_col_' + itemObject.collectionId + '_item';
         }
 
